@@ -1,0 +1,30 @@
+.astro-whatsapp {
+  position: fixed;
+  width: 4rem;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 100%;
+
+  /* MD */
+  @media (min-width: 768px) {
+    bottom: 3rem;
+    right: 3rem;
+  }
+
+  /* XL */
+  @media (min-width: 1280px) {
+    bottom: 6rem;
+    right: 6rem;
+  }
+  
+  .svg {
+    width: 4rem;
+    height: 4rem;
+
+    /* Lg */
+    @media (min-width: 1024px) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
