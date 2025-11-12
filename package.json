@@ -4,6 +4,8 @@
   "homepage": "https://github.com/dfrios/astro-whatsapp",
   "version": "0.0.4",
   "type": "module",
+  "author": "David Rios",
+  "license": "LGPL-3.0-or-later",
   "exports": {
     ".": "./index.ts"
   },
