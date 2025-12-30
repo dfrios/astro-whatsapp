@@ -3,7 +3,7 @@
 This is a template for an Astro component library. Use this template for writing components to use in multiple projects or publish to NPM.
 
 ```sh
-npm create astro@latest -- --template component
+pnpm create astro@latest -- --template component
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/non-html-pages)
@@ -31,5 +31,5 @@ All commands are run from the root of the project, from a terminal:
 
 | Command       | Action                                                                                                                                                                                                                           |
 | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm link`    | Registers this package locally. Run `npm link my-component-library` in an Astro project to install your components                                                                                                               |
-| `npm publish` | [Publishes](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages#publishing-unscoped-public-packages) this package to NPM. Requires you to be [logged in](https://docs.npmjs.com/cli/v8/commands/npm-adduser) |
+| `pnpm link`    | Registers this package locally. Run `pnpm link my-component-library` in an Astro project to install your components                                                                                                               |
+| `pnpm publish` | [Publishes](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages#publishing-unscoped-public-packages) this package to NPM. Requires you to be [logged in](https://docs.npmjs.com/cli/v8/commands/pnpm-adduser) |
