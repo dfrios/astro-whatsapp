@@ -1,14 +1,18 @@
 ---
 import "./WhatsApp.css";
 
-const { useApi = false, mobile = '', message='' } = Astro.props;
+type Props =
+    { useApi: true; mobile: number; message?: string; classNames?: string; }
+  | { useApi: false; mobile: number; message?: never; classNames?: string; }
 
-const url = useApi ? `https://api.whatsapp.com/send?phone=${mobile}&text=${message}` : `https://wa.me/${mobile}` ;
+const { useApi, mobile, message='', classNames='' } = Astro.props;
+
+const url = useApi ? `https://api.whatsapp.com/send?phone=${mobile.toString()}&text=${message}` : `https://wa.me/${mobile.toString()}` ;
 ---
 
 
 <!-- BEGIN WHATSAPP BUTTON -->
-<div class="astro-whatsapp">
+<div class={`astro-whatsapp ${classNames}`}>
   <a href={url} target="_blank">
     <svg version="1.1" viewBox="0 0 47.655 47.872" xmlns="http://www.w3.org/2000/svg">
       <path d="m23.729 1.8892a21.453 21.319 0 0 0-21.184 21.494 21.453 21.319 0 0 0 3.084 10.756l-0.54297 3.3184-1.3379 7.252 6.8965-2.6074 2.123-0.75391a21.453 21.319 0 0 0 11.318 3.1758 21.453 21.319 0 0 0 21.363-21.318l-0.0039-0.35547a21.453 21.319 0 0 0-21.717-20.961z" fill="#2ab318"/>
