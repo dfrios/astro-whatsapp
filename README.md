@@ -1,35 +1,59 @@
-# Astro Starter Kit: Component Package
+# Astro WhatsApp
 
-This is a template for an Astro component library. Use this template for writing components to use in multiple projects or publish to NPM.
+Astro component to show a WhatsApp fixed floating icon in your website.
 
+## ⚡ Instalation
+Using `npm`:
 ```sh
-pnpm create astro@latest -- --template component
+npm install astro-whatsapp
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/non-html-pages)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/non-html-pages)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/component/devcontainer.json)
+Using `yarn`:
+```sh
+yarn add astro-whatsapp
+```
 
-## 🚀 Project Structure
+Using `pnpm`:
+```sh
+pnpm add astro-whatsapp
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## 💻 How to use it
+Keep in mind that WhatsApp can be invoke in 2 different ways. They different URLs with different params and you must choose according to your needs:
+
+### Using api.whatsapp.com
+The `astro-whatsapp` component creates a link that fits this format:
 
 ```text
-/
-├── index.ts
-├── src
-│   └── MyComponent.astro
-├── tsconfig.json
-├── package.json
+https://api.whatsapp.com/send?phone=MOBILE_NUMBER&text=MESSAGE
 ```
 
-The `index.ts` file is the "entry point" for your package. Export your components in `index.ts` to make them importable from your package.
+This is how you can use `astro-whatsapp`:
 
-## 🧞 Commands
+```html
+<WhatsApp useApi={true}, mobile={123456789}, message="Message to send", classNames="" />
+```
 
-All commands are run from the root of the project, from a terminal:
+### Using wa.me
+The `astro-whatsapp` component creates a link that fits this format:
 
-| Command       | Action                                                                                                                                                                                                                           |
-| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm link`    | Registers this package locally. Run `pnpm link my-component-library` in an Astro project to install your components                                                                                                               |
-| `pnpm publish` | [Publishes](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages#publishing-unscoped-public-packages) this package to NPM. Requires you to be [logged in](https://docs.npmjs.com/cli/v8/commands/pnpm-adduser) |
+```text
+https://wa.me/MOBILE_NUMBER
+```
+
+This is how you can use `astro-whatsapp`:
+
+```html
+<WhatsApp useApi={false}, mobile={123456789}, classNames="" />
+```
+
+⚠️ Notice that you cannot attach any messages using wa.me
+
+## 🧱 Parameters
+
+| Name | Type | Mandatory | Description |
+| ---- | :--: | :-------: | ----------- |
+| useApi | boolean | Yes | Use it to choose the type of output URL. |
+| mobile | number | Yes | The WhatsApp number to which the message will be sent. It must include the international prefix number, but never spaces or symbols like + - (). That's why this parameter is a number instead of a string. |
+| message | string | No | The message will be sent.<br />If you set `useApi={true}`, `message` parameter is optional.<br />If you set `useApi={false}` **you cannot** use the `message` parameter |
+| className | string | No | You can add your own classnames at the beginning of the component |
