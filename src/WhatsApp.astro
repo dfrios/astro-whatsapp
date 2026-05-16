@@ -13,7 +13,8 @@ const url = useApi
 ---
 
 <!-- BEGIN WHATSAPP BUTTON -->
-<div class={`astro-whatsapp ${classNames}`}>
+<div
+  class={`fixed w-16 bottom-4 right-4 rounded-full tablet:bottom-12 tablet:right-12 desktop-2:bottom-24 desktop-2:right-24 ${classNames}`}>
   <a href={url} target="_blank">
     <svg
       version="1.1"
