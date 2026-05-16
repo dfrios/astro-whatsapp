@@ -1,7 +1,7 @@
 {
   "name": "astro-whatsapp",
   "description": "Astro component to show a WhatsApp fixed floating icon in your website.",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "type": "module",
   "author": "David Rios",
   "homepage": "https://github.com/dfrios/astro-whatsapp",
